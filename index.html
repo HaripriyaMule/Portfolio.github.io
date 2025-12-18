@@ -1,138 +1,445 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M. Gayatri Devi | Portfolio</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Mule Muniraja Haripriya </title>
-    <link rel="stylesheet" href="style.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ====== COLORS & BODY ====== */
+body{
+  background:white;
+  color:#222;
+  transition:0.4s ease;
+}
+
+.dark-mode{
+  background:#1a0033;   /* Dark Purple */
+  color:white;
+}
+
+/* ====== HEADER ====== */
+header{
+  background:linear-gradient(135deg,#5a009d,#ff3cac);
+  padding:18px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:white;
+  flex-wrap:wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1{
+  font-size:28px;
+}
+
+nav a{
+  margin:0 10px;
+  color:white;
+  font-weight:500;
+  text-decoration:none;
+  padding:6px 10px;
+  border-radius:6px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  background:white;
+  color:#5a009d;
+}
+
+/* ====== PROFILE SECTION ====== */
+.profile{
+  text-align:center;
+  padding:40px 20px;
+  background:linear-gradient(135deg,#7e12cc,#ff8bd0);
+  transition:0.5s;
+}
+
+.profile img{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  border:5px solid white;
+  transition:0.3s;
+}
+
+.profile img:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff8bd0;
+}
+
+.profile h2{
+  color:white;
+  margin-top:10px;
+  font-size:28px;
+}
+
+.resume-btn{
+  margin-top:15px;
+  padding:10px 20px;
+  background:white;
+  color:#5a009d;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.resume-btn:hover{
+  background:#ff8bd0;
+  color:white;
+}
+
+.social-links{
+  margin-top:20px;
+}
+
+.social-links a{
+  display:inline-block;
+  margin:8px;
+  text-decoration:none;
+  padding:10px 18px;
+  background:#5a009d;
+  color:white;
+  border-radius:8px;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.social-links a:hover{
+  background:#ff3cac;
+  color:white;
+}
+
+/* ====== SECTION STYLES ====== */
+.section{
+  padding:40px;
+  scroll-margin-top: 80px;
+}
+
+.section h3{
+  color:#5a009d;
+  font-size:22px;
+  margin-bottom:15px;
+  transition:0.3s;
+}
+
+.dark-mode h3{
+  color:#ff8bd0;
+}
+
+.card{
+  background:#f8f0ff;
+  padding:20px;
+  border-radius:12px;
+  margin-top:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  transition:0.4s ease;
+  cursor:pointer;
+}
+
+.card:hover{
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 60, 172,0.6);
+}
+
+.dark-mode .card{
+  background:#2b0055;
+  color:white;
+  box-shadow:0 4px 10px rgba(255,255,255,0.08);
+}
+
+.card ul{
+  margin-left:20px;
+  margin-top:10px;
+}
+
+.card i{
+  color:#5a009d;
+  margin-right:8px;
+  transition:0.3s;
+}
+
+.card i:hover{
+  color:#ff3cac;
+}
+
+/* ====== SKILLS BAR ====== */
+.skill-bar{
+  margin:15px 0;
+}
+
+.skill-bar span{
+  display:block;
+  font-weight:500;
+  margin-bottom:5px;
+}
+
+.skill-bar div{
+  height:12px;
+  background:#ddd;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.skill-bar div div{
+  height:100%;
+  width:0;
+  background:#5a009d;
+  border-radius:8px;
+  transition:1s;
+}
+
+.dark-mode .skill-bar div div{
+  background:#ff8bd0;
+}
+
+/* ====== TESTIMONIALS ====== */
+.testimonial{
+  background:#fff0ff;
+  padding:20px;
+  margin-top:15px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  transition:0.4s;
+}
+
+.dark-mode .testimonial{
+  background:#2b0055;
+  color:white;
+}
+
+/* ====== FOOTER ====== */
+footer{
+  text-align:center;
+  padding:12px;
+  background:linear-gradient(135deg,#5a009d,#ff3cac);
+  color:white;
+  font-weight:600;
+  margin-top:20px;
+  transition:0.3s;
+}
+
+/* ====== RESPONSIVE ====== */
+@media(max-width:600px){
+  header h1{font-size:22px;}
+  .profile h2{font-size:22px;}
+  nav{margin-top:10px;}
+}
+</style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+<header>
+<h1>⭐ Mule Muniraja Haripriya</h1>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About Me</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#internships">Internships</a>
+<a href="#projects">Projects</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#achievements">Achievements</a>
+<a href="#certificates">Certificates</a>
+<a href="#contact">Contact</a>
+</nav>
+<button class="theme-toggle" onclick="toggleTheme()">🌙 Mode</button>
+</header>
+
+<!-- ====== HOME / PROFILE ====== -->
+<section class="profile" id="home">
+<img src="images/img4.png" alt="Profile Photo">
+<h2>CSE(AI&ML) Student | UI/UX Designer | Web Developer</h2>
+<button class="resume-btn">📄 Download Resume</button>
+<div class="social-links">
+<a href="https://www.linkedin.com/in/haripriya-mule/" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+<a href="https://github.com/HaripriyaMule" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+</div>
+</section>
+
+<!-- ====== ABOUT ME ====== -->
+<section class="section" id="about">
+<h3>👩‍💼 About Me</h3>
+<div class="card">
+<p>I am a CSE(AI&ML) student and passionate UI/UX designer with experience in web development and AI projects. I specialize in creating user-centered designs and building responsive, scalable applications. My goal is to merge technology with creativity to deliver impactful digital experiences.</p>
+</div>
+</section>
+
+<!-- ====== EDUCATION ====== -->
+<section class="section" id="education">
+<h3>📚 Education</h3>
+<div class="card">
+<ul>
+<li><i class="fas fa-graduation-cap"></i><b>B.Tech - CSE(AI&ML)</b> – Gouthami Institute of Technology – <b>80%</b></li>
+<li><i class="fas fa-graduation-cap"></i><b>Intermediate (MPC)</b> – Deepthi Junior College – <b>81%</b></li>
+<li><i class="fas fa-graduation-cap"></i><b>SSC</b> – Santiniketan High School – <b>95.8%</b></li>
+</ul>
+</div>
+</section>
+<!-- ====== CERTIFICATES ====== -->
+<section class="section" id="certificates">
+<h3>🎓 Certificates</h3>
+<div class="card">
+<ul>
+<li>Artificial Intelligence – iStop</li>
+<li>Machine Learning – PrepInsta</li>
+<li>Communication – AriseAwauke</li>
+<li>GenAI – Nexthub Technologoies </li>
+</ul>
+</div>
+</section>
+
+<!-- ====== SKILLS ====== -->
+<section class="section" id="skills">
+<h3>💻 Skills</h3>
+<div class="card">
+<div class="skill-bar">
+<span>Programming (C, Python, Java)</span>
+<div><div style="width:90%"></div></div>
+</div>
+<div class="skill-bar">
+<span>Frontend (HTML, CSS, JS)</span>
+<div><div style="width:85%"></div></div>
+</div>
+<div class="skill-bar">
+<span>UI/UX Design</span>
+<div><div style="width:95%"></div></div>
+</div>
+<div class="skill-bar">
+<span>Soft Skills</span>
+<div><div style="width:90%"></div></div>
+</div>
+</div>
+</section>
+
+<!-- ====== INTERNSHIPS ====== -->
+<section class="section" id="internships">
+<h3>🧑‍💼 Internship Experience</h3>
+
+<div class="card">
+<ul>
+<li><i class="fas fa-robot"></i><b>AI Internship – iStop</b> (May 2024 – July 2024)</li>
+<li>Learned fundamentals of AI and real-time use cases.</li>
+<li>Worked on Python libraries for data preprocessing and ML models.</li>
+<li>Built mini projects on prediction and classification.</li>
+<li>Hands-on experience with ML workflows.</li>
+</ul>
+</div>
+
+<div class="card">
+<ul>
+<li><i class="fas fa-brain"></i><b>GenAI Internship – Nexthub Technologies</b> (May 2025 – Aug 2025)</li>
+<li>Implemented prompt engineering techniques.</li>
+<li>Used Hugging Face models for text & image generation.</li>
+<li>Explored GAN-based creative content.</li>
+<li>Built mini GenAI projects and documented findings.</li>
+</ul>
+</div>
+</section>
+
+<!-- ====== PROJECTS ====== -->
+<section class="section" id="projects">
+<h3>🚀 Projects</h3>
 
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+<div class="card">
+<ul>
+<li><b>Kisankart APP UI/UX System</b></li>
+<li>Complete Kisankart in Figma</li>
+<li>Login, booking, admin dashboards</li>
+<li>Mobile-responsive layouts</li>
+<li>Clean UI components</li>
+</ul>
+</div>
 
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
+<div class="card">
+<ul>
+<li><b>Online Resume Builder</b></li>
+<li>Dynamic resume generation using JS</li>
+<li>Multiple downloadable templates</li>
+<li>User-friendly interface</li>
+<li>Easy customization options</li>
+</ul>
+</div>
 
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#skills">Skills</a>
-                </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
+<div class="card">
+<ul>
+<li><b>Text-to-Image Generator</b></li>
+<li>Python + Hugging Face</li>
+<li>Generated AI images through prompts</li>
+<li>Explored GAN & Stable Diffusion</li>
+<li>Creative image output system</li>
+</ul>
+</div>
+</section>
 
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
 
-    <div id="home" class="jumbotron">
-        <h1 class="display-4">Mule Muniraja Haripriya</h1>
-        <p class="lead">CSE(AI&ML) student skilled in C, Python, and front-end development, with internship
-            experience in web development and AI/ML Python. Looking to contribute as a software developer by building
-            scalable applications and improving problem-solving skills.</p>
-        <hr class="my-4">
-        <p>Skills : C, Python, HTML, CSS, JavaScript</p>
-        <a class="btn btn-primary btn-lg" href="https://www.linkedin.com/in/haripriya-mule/"
-            role="button">LinkedIn</a>
-    </div>
-    <br>
-    <hr>
-    <br>
-    <div id="about" class="card" style="width: 18rem;">
-        <img src="images/img4.png" >
-        <div class="card-body">
-            <h5 class="card-title">Mule Muniraja Haripriya</h5>
-            <p class="card-text">I'm a CSE(AI&ML) student skilled in C, Python, and front-end development, with
-                internship experience in web development and AI/ML Python. Looking to contribute as a software developer
-                by building scalable applications and improving problem-solving skills.</p>
-            <a href="https://github.com/HaripriyaMule" class="btn btn-primary">Github</a>
-        </div>
 
-    </div>
-    <br>
-    <hr>
-    <br>
-    <h2 id="skills">Skills</h2>
-    <h4>Python </h4>
-    <div class="progress">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
-            aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
-    </div>
-    <h4>Java </h4>
-    <div id="skills" class="progress">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
-            aria-valuemin="0" aria-valuemax="100" style="width: 65%"></div>
-    </div>
-    <h4>C Programming </h4>
-    <div id="skills" class="progress">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
-            aria-valuemin="0" aria-valuemax="100" style="width: 55%"></div>
-    </div>
-    <br>
-    <hr>
-    <br>
-    <h2 id="contact">Contact</h2>
-    <p>If you want to connect to me please fill out the form below:</p>
-    <div class="form">
-        <form action="https://formspree.io/f/meoyyrpj" method="POST">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input name="text" type="text" class="form-control" id="name" placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="form-control" name="text" id="message" rows="3" placeholder="Enter your message"></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" name="phone" class="form-control" id="phone" placeholder="Enter your phone number">
-        </form> 
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+<!-- ====== ACHIEVEMENTS ====== -->
+<section class="section" id="achievements">
+<h3>🏆 Achievements</h3>
+<div class="card">
+<ul>
+<li>Participated Nexus Fest in JAM Session</li>
+<li>Focused on personalized career guidance and skill mapping</li>
+<li>Presented prototype flow and UI/UX structure</li>
+</ul>
+</div>
+</section>
 
-    </div>
-    </div>
 
-    <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-        crossorigin="anonymous"></script>
+<!-- ====== CONTACT ====== -->
+<section class="section" id="contact">
+<h3>📩 Contact Me</h3>
+<div class="card">
+<form action="https://formspree.io/f/mvzppbey" method="POST">
+<input type="text" name="name" placeholder="Enter Your Name" required>
+<input type="email" name="email" placeholder="Enter Your Email" required>
+<textarea name="message" placeholder="Write Your Message" rows="3" required></textarea>
+<button type="submit" class="resume-btn">Send Message 🚀</button>
+</form>
+</div>
+</section>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-    -->
+<footer>
+© 2025 | Designed by M.Muniraja Haripriya
+</footer>
+
+<script>
+function toggleTheme(){
+  document.body.classList.toggle("dark-mode");
+}
+
+// Animate skill bars
+window.addEventListener('scroll', function(){
+  const bars = document.querySelectorAll('.skill-bar div div');
+  bars.forEach(bar => {
+    bar.style.width = bar.getAttribute('style').split('width:')[1];
+  });
+});
+</script>
+
 </body>
-
-
 </html>
